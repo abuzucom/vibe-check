@@ -6,7 +6,7 @@ A list of useful prompts to use vibe coding to vibe check other vibe coded bulls
 
 ## Code Quality
 
-- Detect contradictory or impossible logic. For example, code that checks conditions after they've already been violated, or assumes states that are impossible given the control flow. Trace execution paths carefully. Ensure precondition checks happen before using values, validate ranges before checking impossible conditions, and don't check for states that the code has already ruled out.
+- Detect contradictory or impossible logic, including, but not limited to, code that checks conditions after they've already been violated, or assumes impossible states. Trace all execution paths carefully. Ensure precondition checks happen before using values, validate ranges before checking impossible conditions. Don't check for states that the code has already ruled out.
 - Avoid unintended global variable caching. In Node.js and Python servers, global variables persist across requests, causing data leaks and race conditions. Avoid storing request-specific data in module-level variables. Use request-scoped variables or explicitly mark shared caches as intentional.
 - Guard against slow regular expressions. Regular expressions with nested quantifiers or ambiguous patterns can cause catastrophic backtracking and performance issues. Avoid nested quantifiers like (x+)+ and ambiguous patterns. Use atomic groups, possessive quantifiers, or rewrite complex regex patterns as simpler alternatives.
 - Check divisor before division operations. Division by zero causes runtime crashes and must be prevented with explicit checks. Check if the divisor is zero before use. Add error handling for division failures, especially when the divisor comes from computation.
